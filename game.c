@@ -19,7 +19,7 @@ int select_category(categories_t *categories)
     printf("Choose a category: (enter a number)\n");
     for (int i = 0; i < categories->categories_cnt; i++)
     {
-        printf("%d. %s\n", i + 1, categories->category_words[i]);
+        printf("%d. %s\n", i + 1, categories->category_words[i].category);
     }
     scanf(" %d", &category);
     return category - 1;
@@ -55,7 +55,7 @@ void initialize_game(game_t *game, categories_t *categories)
 
     memset(game->guessed_word, '_', strlen(game->word));
     game->guessed_word[strlen(game->word)] = '\0';
-    for (int i = 0; i < strlen(game->word); i++) {
+    for (unsigned long long i = 0; i < strlen(game->word); i++) {
         game->word[i] = toupper(game->word[i]);  
     }
 
@@ -69,7 +69,7 @@ void check_guess(game_t *game, char guess)
 {
     int correctFlag = 0;
 
-    for (int i = 0; i < strlen(game->word); i++)
+    for (unsigned long long i = 0; i < strlen(game->word); i++)
     {
         if (guess == game->word[i])
         {
@@ -89,7 +89,7 @@ void check_guess(game_t *game, char guess)
 
 int is_game_won(game_t *game)
 {
-    for (int i = 0; i < (strlen(game->word)); i++)
+    for (unsigned long long i = 0; i < (strlen(game->word)); i++)
     {
         if (game->guessed_word[i] == '_')
         {
