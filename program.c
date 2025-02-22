@@ -22,9 +22,9 @@ int main() {
         }
     }
     
-    //game_t game;
-    //print_rules();
-    //initialize_game(&game, &categories);
-    //play_game(&game);
+    game_t game;
+    print_rules();
+    initialize_game(&game, &categories);
+    play_game(&game);
     return 0;
 }
