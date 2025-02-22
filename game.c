@@ -2,6 +2,8 @@
 
 #include "ui_service.h"
 #include "word_service.h"
+#include "game.h"
+#include "global.h"
 
 int get_random(int max)
 {
